@@ -26,6 +26,30 @@
 
 html {
   scroll-behavior: smooth;
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+
+html.is-lang-leaving {
+  opacity: 0;
+}
+
+html[lang="el"] {
+  --font-display: "GFS Didot", "Noto Serif", "Palatino Linotype", serif;
+  --font-body: "Manrope", "Noto Sans", "Segoe UI", sans-serif;
+}
+
+html[lang="el"] .site-nav a,
+html[lang="el"] .btn,
+html[lang="el"] .kicker,
+html[lang="el"] .eyebrow,
+html[lang="el"] .epithet,
+html[lang="el"] .brand-name,
+html[lang="el"] .brand-build,
+html[lang="el"] .ability strong,
+html[lang="el"] .travel h2,
+html[lang="el"] .footer-nav h2 {
+  letter-spacing: 0.06em;
 }
 
 body {
@@ -99,6 +123,38 @@ a {
   justify-content: space-between;
   height: var(--header-h);
   gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: auto;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 36px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  text-decoration: none;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cyan);
+  background: rgba(92, 225, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  background: linear-gradient(180deg, #f3e0a4, var(--gold));
+  color: var(--navy);
+  outline: none;
 }
 
 .brand {
